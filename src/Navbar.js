@@ -2,7 +2,7 @@ import React from 'react'
 import './Navbar.css'
 import { Link } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({updateLanguage}) {
   return(<>
     <nav className="navbar navbar-light navbar-expand-sm fixed-top _navbar-bg">
     
@@ -25,10 +25,10 @@ function Navbar() {
           </li>
           <li className="nav-item dropdown"><span className="dropdown-toggle _dropdownText nav-link" data-toggle="dropdown">Languages<span className="caret"></span></span>
             <ul className="dropdown-menu">
-              <li className="dropdown-item">English</li>
-              <li className="dropdown-item">French</li>
-              <li className="dropdown-item">Chinese</li>
-              <li className="dropdown-item">German</li>
+              <li className="dropdown-item" onClick={() => {updateLanguage("english")}}>English</li>
+              <li className="dropdown-item" onClick={() => {updateLanguage("french")}}>French</li>
+              <li className="dropdown-item" onClick={() => {updateLanguage("chinese")}}>Chinese</li>
+              <li className="dropdown-item" onClick={() => {updateLanguage("german")}}>German</li>
             </ul>
           </li>
         </ul>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import Navbar from './Navbar'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
@@ -7,14 +7,20 @@ import Home from './Home'
 
 function App() {
  
+  const [language, setLanguage] = useState(() => "english")
+  
+  function updateLanguage(language) {
+    setLanguage(language)
+  }
+
   return (
     <>
       <Router>
-        <Navbar />
+        <Navbar updateLanguage={updateLanguage}/>
         <div className="_emptySpace"></div>
         <Switch>
-          <Route path="/" exact component={Home} />
-          <Route path="/chapter/:id" exact component={Chapter}/>
+          <Route path="/" exact render={() => <Home language={language}/>} />
+          <Route path="/chapter/:id" exact render={(prop) => <Chapter {...prop} language={language}/>}/>
         </Switch>
       </Router>
     </>
