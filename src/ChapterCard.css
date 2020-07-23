@@ -1,10 +1,10 @@
-._card {
+._chapterCard {
   border: 1px solid gray;
   border-radius: 10px;
   overflow: hidden;
 }
 
-._image {
+._chapterImage {
   height: 150px;
 }
 

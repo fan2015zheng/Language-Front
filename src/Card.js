@@ -1,32 +1,29 @@
-import React, {useRef} from 'react'
+import React from 'react'
 import './Card.css'
-
-
 
 function Card({word,image, audio, audioType}) {
 
-  const audioR = useRef()
-
-  function sound() {
-    audioR.current.play()
+  const imageStyle = {
+    backgroundImage: `url(${image})`,
+    backgroundRepeat: "no-repeat",
+    backgroundSize: "320px 250px"
   }
 
   return (
     <>
-     <div className="_card p-1 m-1">
-       <div className="text-center">
-        <img alt={word} src={image} width="100px"></img>
+     <div className="_wordCard text-center">
+       <div className="_wordImage" style={imageStyle}>
+  
        </div>
-       <div className="text-center m-2">
+       <div className="pt-2 pb-2 _word">
          {word}
        </div>
-       <div className="text-center">
-         <button onClick={sound} className="btn btn-outline-info btn-sm">Sound</button>
-       </div>
-       <audio ref={audioR} controls className="_audio">
+       <div>
+        <audio controls>
           <source src={audio} type="audio/mp4"/>
           Audio not supported
         </audio>
+       </div>
      </div>
     </>
   )

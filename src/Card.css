@@ -1,9 +1,14 @@
-._card {
-  max-width: 200px;
+._wordCard {
+  width: 320px;
   border: 1px solid gray;
-  border-radius: 5px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 
-._audio {
-  display: none;
+._wordImage {
+  height: 250px;
+}
+
+._word {
+  height: 70px;
 }

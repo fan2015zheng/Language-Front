@@ -14,7 +14,7 @@ function Home() {
       <div className="row">
         {[1,2,3].map(
           (chapterId,index) => 
-          <div className="col-sm-6 col-md-4 _chapterCard" key={chapterId}>
+          <div className="col-sm-6 col-md-4 _chapterSpace" key={chapterId}>
             <Link to={`/chapter/${chapterId}`}>
               <ChapterCard chapterId={chapterId}
                 description={description[index]}/>

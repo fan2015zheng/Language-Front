@@ -8,8 +8,8 @@ function ChapterCard({chapterId, description}) {
     backgroundSize: "cover"
   }
   return (<>
-    <div className="text-center _card">
-      <div className="_image" style={imageStyle}>
+    <div className="text-center _chapterCard">
+      <div className="_chapterImage" style={imageStyle}>
 
       </div>
       <div className="_chapter">
