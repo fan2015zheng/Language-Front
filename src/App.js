@@ -19,8 +19,8 @@ function App() {
         <Navbar updateLanguage={updateLanguage}/>
         <div className="_emptySpace"></div>
         <Switch>
-          <Route path="/" exact render={() => <Home language={language}/>} />
           <Route path="/chapter/:id" exact render={(prop) => <Chapter {...prop} language={language}/>}/>
+          <Route path="/" exact render={() => <Home language={language}/>} />
         </Switch>
       </Router>
     </>

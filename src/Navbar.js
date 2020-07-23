@@ -16,19 +16,19 @@ function Navbar({updateLanguage}) {
 
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
-          <li className="nav-item dropdown"><span className="dropdown-toggle _dropdownText nav-link" data-toggle="dropdown">Chapters<span className="caret"></span></span>
+          <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">Chapters<span className="caret"></span></span>
             <ul className="dropdown-menu">
               <li className="dropdown-item"><Link to="/chapter/1">Chapter 1</Link></li>
               <li className="dropdown-item"><Link to="/chapter/2">Chapter 2</Link></li>
               <li className="dropdown-item"><Link to="/chapter/3">Chapter 3</Link></li>
             </ul>
           </li>
-          <li className="nav-item dropdown"><span className="dropdown-toggle _dropdownText nav-link" data-toggle="dropdown">Languages<span className="caret"></span></span>
+          <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">Languages<span className="caret"></span></span>
             <ul className="dropdown-menu">
-              <li className="dropdown-item" onClick={() => {updateLanguage("english")}}>English</li>
-              <li className="dropdown-item" onClick={() => {updateLanguage("french")}}>French</li>
-              <li className="dropdown-item" onClick={() => {updateLanguage("chinese")}}>Chinese</li>
-              <li className="dropdown-item" onClick={() => {updateLanguage("german")}}>German</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("english")}}>English</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("french")}}>French</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("chinese")}}>Chinese</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("german")}}>German</li>
             </ul>
           </li>
         </ul>
