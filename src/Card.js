@@ -6,7 +6,7 @@ function Card({word,image, audio, audioType}) {
   const imageStyle = {
     backgroundImage: `url(${image})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "300px 250px"
+    backgroundSize: "280px 200px"
   }
 
   return (
@@ -16,10 +16,12 @@ function Card({word,image, audio, audioType}) {
   
        </div>
        <div className="pt-2 pb-2 _word">
-         {word}
+         <div>
+          {word}
+         </div>
        </div>
        <div>
-        <audio controls>
+        <audio controls className="_audio">
           <source src={audio} type="audio/mp4"/>
           Audio not supported
         </audio>

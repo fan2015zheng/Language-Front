@@ -1,14 +1,22 @@
 ._wordCard {
-  width: 300px;
+  width: 280px;
   border: 1px solid gray;
   border-radius: 10px;
   overflow: hidden;
 }
 
 ._wordImage {
-  height: 250px;
+  height: 200px;
 }
 
 ._word {
-  height: 70px;
+  height: 90px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+._audio {
+  width: 250px;
+  height: 30px;
 }
