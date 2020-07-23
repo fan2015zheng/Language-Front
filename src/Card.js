@@ -6,7 +6,7 @@ function Card({word,image, audio, audioType}) {
   const imageStyle = {
     backgroundImage: `url(${image})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "320px 250px"
+    backgroundSize: "300px 250px"
   }
 
   return (
