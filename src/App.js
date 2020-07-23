@@ -1,19 +1,22 @@
 import React from 'react';
 import './App.css';
-import Card from './Card'
+import Navbar from './Navbar'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Chapter from './Chapter';
+import Home from './Home'
 
 function App() {
  
   return (
     <>
-      <div>
-        <Card word="apple" 
-          image="https://images5.herokuapp.com/apple.png"
-          audio="https://images5.herokuapp.com/apple.m4a"/>
-        <Card word="car" 
-          image="https://images5.herokuapp.com/car.png"
-          audio="https://images5.herokuapp.com/dangao.m4a"/>
-      </div>
+      <Router>
+        <Navbar />
+        <div className="_emptySpace"></div>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/chapter/:id" exact component={Chapter}/>
+        </Switch>
+      </Router>
     </>
   );
 }

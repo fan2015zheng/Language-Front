@@ -1,0 +1,18 @@
+
+._navbar-bg { 
+  background-color:  #f7dc83; 
+} 
+
+._navbar-active:hover,
+._navbar-active:focus
+{
+  background-color:  #f7dc83 !important; 
+}
+
+._navbar-brand { 
+  color: #563d7c !important;
+  padding: 0 5px 4px;
+  font-weight: 100;
+  border: 0.1px dashed #563d7c;
+  border-radius: 5px;
+}
