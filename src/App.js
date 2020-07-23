@@ -27,7 +27,7 @@ function App() {
   
   return (
     <>
-      <Navbar updateLanguage={updateLanguage} updateChapter={updateChapter}/>
+      <Navbar language={language} chapter={chapter} updateLanguage={updateLanguage} updateChapter={updateChapter}/>
       <div className="_emptySpace"></div>
       { content }
     </>
