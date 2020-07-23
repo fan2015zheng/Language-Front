@@ -1,9 +1,8 @@
 import React from 'react'
 import './Home.css'
 import ChapterCard from './ChapterCard'
-import { Link } from 'react-router-dom'
 
-function Home() {
+function Home({updateChapter}) {
   const description = [
     "One is fine",
     "Two is really really the smallest prime number you will ever seen",
@@ -13,12 +12,10 @@ function Home() {
     <div className="container">
       <div className="row">
         {[1,2,3].map(
-          (chapterId,index) => 
-          <div className="col-sm-6 col-md-4 _chapterSpace" key={chapterId}>
-            <Link to={`/chapter/${chapterId}`}>
-              <ChapterCard chapterId={chapterId}
-                description={description[index]}/>
-            </Link>
+          (chapter,index) => 
+          <div className="col-sm-6 col-md-4 _chapterSpace" key={chapter}>
+              <ChapterCard chapter={chapter} 
+                description={description[index]} updateChapter={updateChapter}/>
           </div>
         )}
       </div>

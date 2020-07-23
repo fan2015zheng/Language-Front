@@ -2,23 +2,17 @@ import React, {useState, useEffect} from 'react'
 import './Chapter.css'
 import Card from './Card'
 
-function Chapter({match, language}) {
+function Chapter({chapter, language}) {
 
   const [words, setWords] = useState([])
-  const [chapterId, setChapterId] = useState(() => 0)
-  
-  if (chapterId !== match.params.id) {
-    //set state triggers re-render, we don't want to render infinitely many times
-    setChapterId(match.params.id)
-  }
   
   useEffect(() => {
-    fetch(`https://language5.herokuapp.com/words/${chapterId-3}`)
+    fetch(`https://language5.herokuapp.com/words/${chapter-3}`)
     .then(res => res.json())
     .then(data => {
       setWords(data)
     })
-  }, [chapterId]) // fetch words only when chapterId changes
+  }, [chapter])
 
   return (<>
     <div className="container-fluid">
@@ -29,19 +23,19 @@ function Chapter({match, language}) {
             let audio = ""
       
             switch(language) {
-              case "english": 
+              case "English": 
                 word = w.English?.Spell
                 audio = w.English?.Audio
                 break
-              case "french":
+              case "French":
                 word = w.French?.Spell
                 audio = w.French?.Audio
                 break
-              case "chinese":
+              case "Chinese":
                 word = w.Chinese?.Spell
                 audio = w.Chinese?.Audio
                 break
-              case "german":
+              case "German":
                 word = w.German?.Spell
                 audio = w.German?.Audio
                 break
