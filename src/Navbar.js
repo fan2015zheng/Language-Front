@@ -16,19 +16,19 @@ function Navbar() {
 
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
-          <li className="nav-item dropdown"><a className="dropdown-toggle _navbar-active nav-link" data-toggle="dropdown" href="#">Chapters<span className="caret"></span></a>
+          <li className="nav-item dropdown"><span className="dropdown-toggle _dropdownText nav-link" data-toggle="dropdown">Chapters<span className="caret"></span></span>
             <ul className="dropdown-menu">
               <li className="dropdown-item"><Link to="/chapter/1">Chapter 1</Link></li>
               <li className="dropdown-item"><Link to="/chapter/2">Chapter 2</Link></li>
               <li className="dropdown-item"><Link to="/chapter/3">Chapter 3</Link></li>
             </ul>
           </li>
-          <li className="nav-item dropdown"><a className="dropdown-toggle _navbar-active nav-link" data-toggle="dropdown" href="#">Languages<span className="caret"></span></a>
+          <li className="nav-item dropdown"><span className="dropdown-toggle _dropdownText nav-link" data-toggle="dropdown">Languages<span className="caret"></span></span>
             <ul className="dropdown-menu">
-              <li className="dropdown-item"><a href="#">English</a></li>
-              <li className="dropdown-item"><a href="#">French</a></li>
-              <li className="dropdown-item"><a href="#">Chinese</a></li>
-              <li className="dropdown-item"><a href="#">German</a></li>
+              <li className="dropdown-item">English</li>
+              <li className="dropdown-item">French</li>
+              <li className="dropdown-item">Chinese</li>
+              <li className="dropdown-item">German</li>
             </ul>
           </li>
         </ul>

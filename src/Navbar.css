@@ -3,10 +3,8 @@
   background-color:  #f7dc83; 
 } 
 
-._navbar-active:hover,
-._navbar-active:focus
-{
-  background-color:  #f7dc83 !important; 
+._dropdownText {
+  cursor: pointer;
 }
 
 ._navbar-brand { 
