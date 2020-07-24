@@ -7,7 +7,7 @@ function Chapter({chapter, language}) {
   const [words, setWords] = useState([])
   
   useEffect(() => {
-    fetch(`https://language5.herokuapp.com/words/${chapter-3}`)
+    fetch(`https://language5.herokuapp.com/words/${chapter}`)
     .then(res => res.json())
     .then(data => {
       setWords(data)
@@ -24,20 +24,20 @@ function Chapter({chapter, language}) {
       
             switch(language) {
               case "English": 
-                word = w.English?.Spell
-                audio = w.English?.Audio
+                word = w.English?.spell
+                audio = w.English?.audio
                 break
               case "French":
-                word = w.French?.Spell
-                audio = w.French?.Audio
+                word = w.French?.spell
+                audio = w.French?.audio
                 break
               case "Chinese":
-                word = w.Chinese?.Spell
-                audio = w.Chinese?.Audio
+                word = w.Chinese?.spell
+                audio = w.Chinese?.audio
                 break
               case "German":
-                word = w.German?.Spell
-                audio = w.German?.Audio
+                word = w.German?.spell
+                audio = w.German?.audio
                 break
               default:
                 break

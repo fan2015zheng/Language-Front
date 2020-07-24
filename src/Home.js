@@ -4,9 +4,9 @@ import ChapterCard from './ChapterCard'
 
 function Home({updateChapter}) {
   const description = [
-    "One is fine",
-    "Two is really really the smallest prime number you will ever seen",
-    "Three is okay and it represents success."
+    "Language Basics",
+    "Greetings and Introductions",
+    "Work and School"
   ]
   return(<>
     <div className="container">
