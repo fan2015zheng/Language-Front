@@ -6,7 +6,7 @@ function Card({word, image, audio}) {
   const imageStyle = {
     backgroundImage: `url(${image})`,
     backgroundRepeat: "no-repeat",
-    backgroundSize: "280px 200px"
+    backgroundSize: "280px 210px"  //4:3
   }
   
   const audioR = useRef()

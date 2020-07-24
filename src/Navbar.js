@@ -16,12 +16,13 @@ function Navbar({language, chapter, updateLanguage, updateChapter}) {
 
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
-          <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">Learn {language}<span className="caret"></span></span>
+          <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">Learn {Language(language)}<span className="caret"></span></span>
             <ul className="dropdown-menu">
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("English")}}>English</li>
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("French")}}>French</li>
-              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("Chinese")}}>Chinese</li>
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("German")}}>German</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("Chinese")}}>Chinese</li>
+              <li className="dropdown-item _pointer" onClick={() => {updateLanguage("Pinyin")}}>Chinese (Pinyin)</li>
             </ul>
           </li>
 
@@ -39,3 +40,10 @@ function Navbar({language, chapter, updateLanguage, updateChapter}) {
 }
 
 export default Navbar
+
+function Language(language) {
+  if (language === "Pinyin") {
+    return "Chinese (Pinyin)"
+  }
+  return language
+}

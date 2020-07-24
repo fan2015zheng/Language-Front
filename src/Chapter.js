@@ -35,6 +35,10 @@ function Chapter({chapter, language}) {
                 word = w.Chinese?.spell
                 audio = w.Chinese?.audio
                 break
+              case "Pinyin":
+                word = w.Chinese?.pinyin
+                audio = w.Chinese?.audio
+                break
               case "German":
                 word = w.German?.spell
                 audio = w.German?.audio
