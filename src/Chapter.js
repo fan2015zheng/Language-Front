@@ -43,7 +43,7 @@ function Chapter({chapter, language}) {
                 break
             }
             console.log(audio)
-            audio = "https://images5.herokuapp.com/cHello.m4a"
+            audio = "https://images5.herokuapp.com/cHello.mp3"
             return (
               <div key={w._id} className="col-sm-6 col-lg-4 mb-3" align="center">
                 <Card word={word} image={w.image} audio={audio}/>
