@@ -1,34 +1,29 @@
 import React from 'react'
 import './Card.css'
 
-function Card({word,image, audio, audioType}) {
+function Card({word,image, audio}) {
 
   const imageStyle = {
     backgroundImage: `url(${image})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "280px 200px"
   }
-
-  return (
-    <>
-     <div className="_wordCard text-center">
-       <div className="_wordImage" style={imageStyle}>
   
-       </div>
-       <div className="pt-2 pb-2 _word">
-         <div>
-          {word}
-         </div>
-       </div>
-       <div>
+  return (<>
+    <div className="_wordCard text-center">
+      <div className="_wordImage" style={imageStyle} />
+
+      <div className="_word">
+        <div>{word}</div>
+      </div>
+      <div className="_audioDiv"> 
         <audio controls className="_audio">
-          <source src={audio} type="audio/mp4"/>
-          Audio not supported
+        <source src={audio} type="audio/mp4"/>
+        Audio not supported
         </audio>
-       </div>
-     </div>
-    </>
-  )
+      </div>
+    </div>
+  </>)
 }
 
 export default Card
