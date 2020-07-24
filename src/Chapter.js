@@ -21,7 +21,7 @@ function Chapter({chapter, language}) {
           words.map((w) => {
             let word = ""
             let audio = ""
-      
+    
             switch(language) {
               case "English": 
                 word = w.English?.spell
@@ -42,6 +42,8 @@ function Chapter({chapter, language}) {
               default:
                 break
             }
+            console.log(audio)
+            audio = "https://images5.herokuapp.com/cHello.m4a"
             return (
               <div key={w._id} className="col-sm-6 col-lg-4 mb-3" align="center">
                 <Card word={word} image={w.image} audio={audio}/>
