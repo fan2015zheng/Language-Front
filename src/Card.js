@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useRef, useEffect} from 'react'
 import './Card.css'
 
-function Card({word,image, audio}) {
+function Card({word, image, audio}) {
 
   const imageStyle = {
     backgroundImage: `url(${image})`,
@@ -9,6 +9,12 @@ function Card({word,image, audio}) {
     backgroundSize: "280px 200px"
   }
   
+  const audioR = useRef()
+
+  useEffect(() => {
+    audioR.current.load()
+  })
+
   return (<>
     <div className="_wordCard text-center">
       <div className="_wordImage" style={imageStyle} />
@@ -17,9 +23,9 @@ function Card({word,image, audio}) {
         <div>{word}</div>
       </div>
       <div className="_audioDiv"> 
-        <audio controls className="_audio">
-        <source src={audio} type="audio/mp4"/>
-        Audio not supported
+        <audio ref={audioR} controls className="_audio">
+          <source src={audio} type="audio/mp4"/>
+          Audio not supported
         </audio>
       </div>
     </div>
