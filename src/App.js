@@ -8,18 +8,24 @@ function App() {
  
   const [language, setLanguage] = useState(() => "English")
   const [chapter, setChapter] = useState(() => 0)
-  
-  function updateLanguage(language) {
-    setLanguage(language)
-  }
+  const [page, setPage] = useState(1)
 
   function updateChapter(chapter) {
     setChapter(chapter)
+    setPage(1)
+  }
+
+  function updatePage(page) {
+    setPage(page)
+  }
+
+  function updateLanguage(language) {
+    setLanguage(language)
   }
   
   let content
   if (chapter && chapter > 0) {
-    content = <Chapter chapter={chapter} language={language}/>
+    content = <Chapter chapter={chapter} page={page} language={language} updatePage={updatePage}/>
   }
   else {
     content = <Home updateChapter={updateChapter}/>

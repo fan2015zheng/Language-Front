@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import './Chapter.css'
 import Pagination from './Pagination'
 import Page from './Page'
 
-function Chapter({chapter, language}) {
+function Chapter({chapter, page, language, updatePage}) {
 
   const chapterPageCount = [11,11,11]
 
@@ -11,12 +11,6 @@ function Chapter({chapter, language}) {
   if (chapter && chapter > 0 && chapter <= chapterPageCount.length)
   {
     count = chapterPageCount[chapter - 1]
-  }
-
-  const [page, setPage] = useState(() => 1)
-
-  function updatePage(page) {
-    setPage(page)
   }
   
   return(<>
