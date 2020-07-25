@@ -5,7 +5,7 @@ import Page from './Page'
 
 function Chapter({chapter, language}) {
 
-  const chapterPageCount = [15,14,13]
+  const chapterPageCount = [12,12,12]
 
   let count = 0
   if (chapter && chapter > 0 && chapter <= chapterPageCount.length)
