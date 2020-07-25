@@ -3,8 +3,11 @@ import './Card.css'
 
 function Card({word, image, audio}) {
 
+  const imageUrl = image ? `https://images5.herokuapp.com/${image}` : ""
+  const audioUrl = audio ? `https://images5.herokuapp.com/${audio}` : ""
+
   const imageStyle = {
-    backgroundImage: `url(https://images5.herokuapp.com/${image})`,
+    backgroundImage: `url(${imageUrl})`,
     backgroundRepeat: "no-repeat",
     backgroundSize: "280px 210px"  //4:3
   }
@@ -24,7 +27,7 @@ function Card({word, image, audio}) {
       </div>
       <div className="_audioDiv"> 
         <audio ref={audioR} controls className="_audio">
-          <source src={"https://images5.herokuapp.com/"+audio} type="audio/mp4"/>
+          <source src={audioUrl} type="audio/mp4"/>
           Audio not supported
         </audio>
       </div>
