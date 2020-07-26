@@ -15,7 +15,7 @@ function Page({chapter, lesson, page, language}) {
     .then(data => {
       setWords(data)
     })
-  }, [chapter, lesson, page])
+  }, [chapterLessonPage])
 
   return (<>
     <div className="container-fluid">
