@@ -4,9 +4,13 @@ import Card from './Card'
 
 function Page({chapter, lesson, page, language}) {
   const [words, setWords] = useState([])
-  
+
+  let chapterLessonPage = `${chapter}-${lesson}-${page}`
+  if (chapter === 1) {
+    chapterLessonPage = `${lesson}-${page}` //accomment date old data
+  }
   useEffect(() => {
-    fetch(`https://language5.herokuapp.com/words/${chapter}-${lesson}-${page}`)
+    fetch(`https://language5.herokuapp.com/words/${chapterLessonPage}`)
     .then(res => res.json())
     .then(data => {
       setWords(data)
