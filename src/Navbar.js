@@ -3,7 +3,7 @@ import './Navbar.css'
 
 function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updateLesson}) {
 
-  const chapterText = chapter && chapter>0 ? "Chapter "+chapter : "Chapters"
+  const chapterText = chapter && chapter>0 ? "Unit "+chapter : "Units"
   const lessonText = lesson && lesson>0 ? "Lesson "+lesson : "Lessons"
 
   let lessonDrowdown = null
@@ -44,7 +44,7 @@ function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updat
           <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">{chapterText}<span className="caret"></span></span>
             <ul className="dropdown-menu">
               {[1,2,3].map((i) => 
-                <li className="dropdown-item _pointer" key={i} onClick={() => {updateChapter(i)}}>Chapter {i}</li>
+                <li className="dropdown-item _pointer" key={i} onClick={() => {updateChapter(i)}}>Unit {i}</li>
               )}
             </ul>
           </li>
