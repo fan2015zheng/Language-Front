@@ -47,6 +47,10 @@ function Page({chapter, lesson, page, language}) {
               default:
                 break
             }
+
+            if (!word) {
+              return null
+            }
             
             return (
               <div key={w._id} className="col-sm-6 col-lg-4 mb-3" align="center">
