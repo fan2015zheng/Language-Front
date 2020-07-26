@@ -1,9 +1,24 @@
 import React from 'react'
 import './Navbar.css'
 
-function Navbar({language, chapter, updateLanguage, updateChapter}) {
+function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updateLesson}) {
 
   const chapterText = chapter && chapter>0 ? "Chapter "+chapter : "Chapters"
+  const lessonText = lesson && lesson>0 ? "Lesson "+lesson : "Lessons"
+
+  let lessonDrowdown = null
+
+  if (chapter && chapter>0) {
+    lessonDrowdown = (
+      <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">{lessonText}<span className="caret"></span></span>
+        <ul className="dropdown-menu">
+          {[1,2,3,4].map((i) => 
+            <li className="dropdown-item _pointer" key={i} onClick={() => {updateLesson(i)}}>Lesson {i}</li>
+          )}
+        </ul>
+      </li>
+    )
+  }
 
   return(<>
     <nav className="navbar navbar-light navbar-expand-sm fixed-top _navbar-bg">
@@ -33,6 +48,9 @@ function Navbar({language, chapter, updateLanguage, updateChapter}) {
               )}
             </ul>
           </li>
+          
+          {lessonDrowdown}
+
         </ul>
       </div>
     </nav>

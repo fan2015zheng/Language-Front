@@ -2,16 +2,16 @@ import React, {useState, useEffect} from 'react'
 import './Page.css'
 import Card from './Card'
 
-function Page({chapter, page, language}) {
+function Page({chapter, lesson, page, language}) {
   const [words, setWords] = useState([])
   
   useEffect(() => {
-    fetch(`https://language5.herokuapp.com/words/${chapter}-${page}`)
+    fetch(`https://language5.herokuapp.com/words/${chapter}-${lesson}-${page}`)
     .then(res => res.json())
     .then(data => {
       setWords(data)
     })
-  }, [chapter, page])
+  }, [chapter, lesson, page])
 
   return (<>
     <div className="container-fluid">

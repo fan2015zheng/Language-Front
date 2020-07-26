@@ -2,7 +2,7 @@ import React from 'react'
 import './Home.css'
 import ChapterCard from './ChapterCard'
 
-function Home({updateChapter}) {
+function Home({updateChapterLesson}) {
   const description = [
     "Language Basics",
     "Greetings and Introductions",
@@ -15,7 +15,7 @@ function Home({updateChapter}) {
           (chapter,index) => 
           <div className="col-sm-6 col-md-4 _chapterSpace" key={chapter}>
               <ChapterCard chapter={chapter} 
-                description={description[index]} updateChapter={updateChapter}/>
+                description={description[index]} updateChapterLesson={updateChapterLesson}/>
           </div>
         )}
       </div>
