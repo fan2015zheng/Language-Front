@@ -35,7 +35,10 @@ function ChapterCard({chapter, description, updateChapterLesson}) {
                 const colory = (l-1)%color[colorX].length
                 return (
                 <div key={j} className="_lesson">
-                  <div className={`_lessonInner badge badge-${color[colorX][colory]}`} onClick={() => {updateChapterLesson(chapter,l)}}>Lesson {l}</div>
+                  <div className={`_lessonInner badge badge-${color[colorX][colory]}`} 
+                    onClick={() => {updateChapterLesson(chapter,l)}}>
+                      <small>Lesson {l}</small>
+                  </div>
                 </div>)
               }
             )}
