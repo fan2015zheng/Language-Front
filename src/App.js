@@ -3,13 +3,15 @@ import './App.css';
 import Navbar from './Navbar'
 import ChapterLesson from './ChapterLesson';
 import Home from './Home'
+import Util from './Util'
+
 
 function App() {
  
   const [language, setLanguage] = useState(() => "English")
   const [chapter, setChapter] = useState(() => 0)
   const [lesson, setLesson] = useState(() => 1)
-  const [page, setPage] = useState(1)
+  const [page, setPage] = useState(1)   //page depends on language
 
   function updateChapterLesson(chapter,lesson) {
     setChapter(chapter)
@@ -32,8 +34,16 @@ function App() {
     setPage(page)
   }
 
-  function updateLanguage(language) {
-    setLanguage(language)
+  function updateLanguage(lang) {
+    const dbPage = Util.getDatabasePage(language, chapter, lesson, page)
+    const newPage = Util.getLanguagePage(lang, chapter, lesson, dbPage)
+    
+    if (!newPage) {
+      alert(`This page has no ${lang} version`)
+      return
+    }
+    setLanguage(lang)
+    setPage(newPage)
   }
   
   let content
