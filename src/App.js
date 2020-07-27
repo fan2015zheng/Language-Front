@@ -35,6 +35,12 @@ function App() {
   }
 
   function updateLanguage(lang) {
+
+    if (!chapter || chapter === 0 || !lesson || lesson === 0) {
+      setLanguage(lang)
+      return
+    }
+    
     const dbPage = Util.getDatabasePage(language, chapter, lesson, page)
     const newPage = Util.getLanguagePage(lang, chapter, lesson, dbPage)
     
