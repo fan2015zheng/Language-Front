@@ -13,7 +13,7 @@ function Home({updateChapterLesson}) {
       <div className="row">
         {[1,2,3].map(
           (chapter,index) => 
-          <div className="col-sm-6 col-md-4 _chapterSpace" key={chapter}>
+          <div className="col-md-6 _chapterSpace" key={chapter}>
               <ChapterCard chapter={chapter} 
                 description={description[index]} updateChapterLesson={updateChapterLesson}/>
           </div>

@@ -7,6 +7,12 @@ function ChapterCard({chapter, description, updateChapterLesson}) {
     backgroundRepeat: "no-repeat",
     backgroundSize: "cover"
   }
+
+  const color = [
+    ["info", "light", "primary"],
+    ["light", "danger", "dark", "light","danger"],
+    ["warning", "light", "info"]
+  ]
   
   return (<>
     <div className="text-center _chapterCard">
@@ -20,22 +26,21 @@ function ChapterCard({chapter, description, updateChapterLesson}) {
         {description}
       </div>
       <div className="_lessons">
-        <div className="d-flex _lessonsRow">
-          <div className="_lesson">
-            <div className="_lessonInner badge badge-primary" onClick={() => {updateChapterLesson(chapter,1)}}>Lesson 1</div>
+        {[0,1,2].map((i)=> 
+          <div key={i} className="d-flex _lessonsRow">
+            {[0,1,2,3].map((j)=>
+              {
+                const l = i*4+j+1
+                const colorX = (chapter-1)%color.length
+                const colory = (l-1)%color[colorX].length
+                return (
+                <div key={j} className="_lesson">
+                  <div className={`_lessonInner badge badge-${color[colorX][colory]}`} onClick={() => {updateChapterLesson(chapter,l)}}>Lesson {l}</div>
+                </div>)
+              }
+            )}
           </div>
-          <div className="_lesson">
-            <div className="_lessonInner badge badge-success" onClick={() => {updateChapterLesson(chapter,2)}}>Lesson 2</div>
-          </div>
-        </div>
-        <div className="d-flex">
-          <div className="_lesson">
-            <div className="_lessonInner badge badge-danger" onClick={() => {updateChapterLesson(chapter,3)}}>Lesson 3</div>
-          </div>
-          <div className="_lesson">
-            <div className="_lessonInner badge badge-warning" onClick={() => {updateChapterLesson(chapter,4)}}>Lesson 4</div>
-          </div>
-        </div>
+        )}
       </div>
     </div>
   </>)

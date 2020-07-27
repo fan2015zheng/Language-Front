@@ -22,7 +22,7 @@
   box-sizing: border-box;
 }
 ._lessons {
-  height: 100px;
+  height: 130px;
   width: 100%;
   padding: 5px;
 }
@@ -30,13 +30,13 @@
   width: 100%;
 }
 ._lesson {
-  width: 50%;
+  width: 25%;
   text-align: center;
   padding: 5px ;
 }
 ._lessonInner {
-  padding-top: 10px;
-  height: 35px;
+  padding-top: 9px;
+  height: 30px;
   width: 100%;
   cursor: pointer;
 }
