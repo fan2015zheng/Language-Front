@@ -12,7 +12,7 @@ function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updat
     lessonDrowdown = (
       <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">{lessonText}<span className="caret"></span></span>
         <ul className="dropdown-menu">
-          {[1,2,3,4].map((i) => 
+          {[1,2,3,4,5,6,7,8,9,10,11,12].map((i) => 
             <li className="dropdown-item _pointer" key={i} onClick={() => {updateLesson(i)}}>Lesson {i}</li>
           )}
         </ul>
