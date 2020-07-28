@@ -20,20 +20,24 @@ function Page({chapter, lesson, page, language}) {
   return (<>
     <div className="container-fluid">
       <div className="row justify-content-sm-center">
-        {
-          words.map((w) => {
+        <div className="col-md-10 col-lg-8 col-xl-6">
+          <div className="row">
+            {
+              words.map((w) => {
 
-            let word = getWord(w, language)
-            let image = getImage(w)
-            let audio = getAudio(w, language)
-          
-            return (
-              <div key={w._id} className="col-sm-6 col-lg-4 mb-3" align="center">
-                <Card word={word} image={image} audio={audio}/>
-              </div>
-            )
-          })
-        }
+                let word = getWord(w, language)
+                let image = getImage(w)
+                let audio = getAudio(w, language)
+              
+                return (
+                  <div key={w._id} className="col-md-6 mb-3" align="center">
+                    <Card word={word} image={image} audio={audio}/>
+                  </div>
+                )
+              })
+            }  
+          </div>    
+        </div>
       </div>
     </div>
   </>)
