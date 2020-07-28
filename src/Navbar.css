@@ -14,3 +14,8 @@
   border: 0.1px dashed #563d7c;
   border-radius: 5px;
 }
+
+._dropdown {
+  max-height: 200px;
+  overflow-y: auto;
+}

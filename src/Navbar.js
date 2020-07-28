@@ -11,7 +11,7 @@ function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updat
   if (chapter && chapter>0) {
     lessonDrowdown = (
       <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">{lessonText}<span className="caret"></span></span>
-        <ul className="dropdown-menu">
+        <ul className="dropdown-menu _dropdown">
           {[1,2,3,4,5,6,7,8,9,10,11,12].map((i) => 
             <li className="dropdown-item _pointer" key={i} onClick={() => {updateLesson(i)}}>Lesson {i}</li>
           )}
@@ -32,7 +32,7 @@ function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updat
       <div className="collapse navbar-collapse" id="collapsibleNavbar">
         <ul className="navbar-nav">
           <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">Learn {Language(language)}<span className="caret"></span></span>
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu _dropdown">
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("English")}}>English</li>
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("French")}}>French</li>
               <li className="dropdown-item _pointer" onClick={() => {updateLanguage("German")}}>German</li>
@@ -42,7 +42,7 @@ function Navbar({language, chapter, lesson, updateLanguage, updateChapter, updat
           </li>
 
           <li className="nav-item dropdown"><span className="dropdown-toggle _pointer nav-link" data-toggle="dropdown">{chapterText}<span className="caret"></span></span>
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu _dropdown">
               {[1,2,3].map((i) => 
                 <li className="dropdown-item _pointer" key={i} onClick={() => {updateChapter(i)}}>Unit {i}</li>
               )}
