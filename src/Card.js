@@ -3,7 +3,7 @@ import './Card.css'
 
 function Card({word, image, audio}) {
 
-  const randomI = Math.floor(Math.random() * 3) + 1  // random 1,2,3
+  const randomI = Math.floor(Math.random() * 4) + 1  // random 1-4
   
 
   const imageUrl = image ? `https://images5.herokuapp.com/${image}` : `./img/random${randomI}.jpg`
