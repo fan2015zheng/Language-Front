@@ -1,5 +1,35 @@
+
+
+@keyframes coverFadeIn {
+  from {background: transparent;}
+  to {background: rgb(86, 61, 124,0.5);}
+}
+
+._cover {
+  position: fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  z-index:1;
+  animation-name: coverFadeIn;
+  background: transparent;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes loaderFadeIn {
+  from {top: calc(100% + 100px)}
+  to {top: calc(50% - 50px);}
+}
 ._loader {
   position: absolute;
   left: calc(50% - 50px);
-  margin-top: 50px;
+  top: calc(100% + 100px);
+  z-index: 1;
+  animation-name: loaderFadeIn;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
 }

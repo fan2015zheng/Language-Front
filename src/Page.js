@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import './Page.css'
 import Card from './Card'
 import Util from './Util'
-import {BarLoader} from 'react-spinners'
+import {RingLoader} from 'react-spinners'
 
 function Page({chapter, lesson, page, language}) {
   const [words, setWords] = useState([])
@@ -21,15 +21,22 @@ function Page({chapter, lesson, page, language}) {
     })
   }, [chapterLessonPage])
 
+  let loader = null
+  if (loading) {
+    loader =     
+    <div className="_cover">
+      <div className="_loader">
+        <RingLoader loading color="#f7dc83" />
+      </div>
+    </div>
+  }
+
   return (<>
+    {loader}
     <div className="container-fluid">
       <div className="row justify-content-sm-center">
         <div className="col-md-10 col-lg-8 col-xl-6">
-          <div className="row">
-            <div className="_loader">
-              <BarLoader loading={loading} color="#563d7c" />
-            </div>
-           
+          <div className="row">           
             {
               words.map((w) => {
 
