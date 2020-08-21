@@ -2,17 +2,21 @@ import React, {useState, useEffect} from 'react'
 import './Page.css'
 import Card from './Card'
 import Util from './Util'
+import {BarLoader} from 'react-spinners'
 
 function Page({chapter, lesson, page, language}) {
   const [words, setWords] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const dbPage = Util.getDatabasePage(language, chapter, lesson, page)
   const chapterLessonPage = `${chapter}-${lesson}-${dbPage}`
 
   useEffect(() => {
+    setLoading(true)
     fetch(`https://language5.herokuapp.com/words/${chapterLessonPage}`)
     .then(res => res.json())
     .then(data => {
+      setLoading(false)
       setWords(data)
     })
   }, [chapterLessonPage])
@@ -22,6 +26,10 @@ function Page({chapter, lesson, page, language}) {
       <div className="row justify-content-sm-center">
         <div className="col-md-10 col-lg-8 col-xl-6">
           <div className="row">
+            <div className="_loader">
+              <BarLoader loading={loading} color="#563d7c" />
+            </div>
+           
             {
               words.map((w) => {
 

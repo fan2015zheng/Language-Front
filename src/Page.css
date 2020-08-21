@@ -1,0 +1,5 @@
+._loader {
+  position: absolute;
+  left: calc(50% - 50px);
+  margin-top: 50px;
+}
